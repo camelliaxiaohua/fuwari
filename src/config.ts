@@ -44,6 +44,7 @@ export const navBarConfig: NavBarConfig = {
     LinkPreset.Home,  // 首页链接
     LinkPreset.Archive,  // 归档链接
     LinkPreset.About,  // 关于链接
+    LinkPreset.Links, // 友链
     {
       name: 'GitHub',  // GitHub 链接
       url: 'https://github.com/camelliaxiaohua',  // 链接地址

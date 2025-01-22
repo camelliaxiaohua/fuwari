@@ -1,0 +1,57 @@
+---
+import MainGridLayout from '../layouts/MainGridLayout.astro'
+
+import Markdown from '@components/misc/Markdown.astro'
+import I18nKey from '../i18n/i18nKey'
+import { i18n } from '../i18n/translation'
+
+const friends = [
+  {
+    name: '美团技术团队',
+    url: 'https://tech.meituan.com/',
+    image:
+      'https://p0.meituan.net/travelcube/38a63691012abb560d266e4f5243d884603544.png',
+    description: '美团技术团队以浓厚的学习和分享氛围享誉业界',
+  },
+  {
+    name: '示例友链2',
+    url: 'https://example2.com',
+    image:
+      'https://camelliaxiaohua-1313958787.cos.ap-shanghai.myqcloud.com/background%2FIMG_2548.JPG',
+    description: '这是示例友链2的描述',
+  },
+  {
+    name: '示例友链3',
+    url: 'https://example3.com',
+    image:
+      'https://camelliaxiaohua-1313958787.cos.ap-shanghai.myqcloud.com/background%2FIMG_2548.JPG',
+    description: '这是示例友链3的描述',
+  },
+]
+---
+<MainGridLayout title={i18n(I18nKey.links)} description={i18n(I18nKey.links)}>
+    <div class="flex flex-col space-y-6">
+        <Markdown>
+            <h1>{i18n(I18nKey.links)}</h1>
+            <p>这里是友链页面，展示与我们站点相关的优秀站点。</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {friends.map((friend) => (
+                  <div class="card-base p-6 rounded-lg">
+                      <img 
+                        src={friend.image} 
+                        alt={`${friend.name} 图片`} 
+                        class="w-full h-auto mb-4 rounded-lg shadow-md"
+                        loading="lazy"
+                      />
+                      <h1 class="text-xl font-bold">
+                          <a href={friend.url} target="_blank" rel="noopener">
+                              {friend.name}
+                          </a>
+                      </h1>
+                      <p class="mt-2">{friend.description}</p>
+                  </div>
+              ))}
+          </div>
+        </Markdown>
+    </div>
+</MainGridLayout>
