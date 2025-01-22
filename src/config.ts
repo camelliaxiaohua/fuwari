@@ -46,7 +46,7 @@ export const navBarConfig: NavBarConfig = {
     LinkPreset.About,  // 关于链接
     {
       name: 'GitHub',  // GitHub 链接
-      url: 'https://github.com/saicaca/fuwari',  // 链接地址
+      url: 'https://github.com/camelliaxiaohua',  // 链接地址
       external: true,  // 是否为外部链接，外部链接将会在新标签页打开
     },
   ],
@@ -55,13 +55,13 @@ export const navBarConfig: NavBarConfig = {
 // 个人资料配置
 export const profileConfig: ProfileConfig = {
   avatar: 'assets/images/demo-avatar.png',  // 头像路径，相对于 /src 目录。若以 '/' 开头，则相对于 /public 目录
-  name: 'Lorem Ipsum',  // 姓名
-  bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',  // 个人简介
+  name: 'CAMELLIA XIAOHUA',  // 姓名
+  bio: '花有重开日，人无再少年。',  // 个人简介
   links: [
     {
       name: 'Twitter',  // Twitter 链接
       icon: 'fa6-brands:twitter',  // 图标，使用 Iconify 的图标库，具体可访问 https://icones.js.org/
-      url: 'https://twitter.com',  // 链接地址
+      url: 'https://x.com/Camelliaxiaohua',  // 链接地址
     },
     {
       name: 'Steam',  // Steam 链接
@@ -71,7 +71,7 @@ export const profileConfig: ProfileConfig = {
     {
       name: 'GitHub',  // GitHub 链接
       icon: 'fa6-brands:github',  // 图标
-      url: 'https://github.com/saicaca/fuwari',  // 链接地址
+      url: 'https://github.com/camelliaxiaohua',  // 链接地址
     },
   ],
 }
