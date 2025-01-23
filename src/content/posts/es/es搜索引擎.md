@@ -1,10 +1,10 @@
 ---
-title: ES
-published: 2024-05-01
-updated: 2024-11-29
-description: 'Read more about Markdown features in Fuwari'
+title: 倒排索引
+published: 2025-15-14
+updated: 2025-15-14
+description: '倒排索引（Inverted Index）是一种高效的数据结构，主要用于全文搜索。它的核心思想是建立从词（Term）到文档（Document）的映射关系，从而加速查询过程。'
 image: ''
-tags: [Demo, ES, Markdown, Fuwari]
+tags: [分布式搜索引擎, ESElasticsearch]
 category: 'Examples'
 draft: false 
 ---
