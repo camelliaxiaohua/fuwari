@@ -30,7 +30,8 @@ const friends = [
 ]
 ---
 <MainGridLayout title={i18n(I18nKey.links)} description={i18n(I18nKey.links)}>
-    <div class="flex flex-col space-y-6">
+  <div class="flex w-full rounded-[var(--radius-large)] overflow-hidden relative min-h-32">
+    <div class="card-base z-10 px-9 py-6 relative w-full ">
         <Markdown>
             <h1>{i18n(I18nKey.links)}</h1>
             <p>这里是友链页面，展示与我们站点相关的优秀站点。</p>
@@ -53,5 +54,6 @@ const friends = [
               ))}
           </div>
         </Markdown>
+    </div>
     </div>
 </MainGridLayout>

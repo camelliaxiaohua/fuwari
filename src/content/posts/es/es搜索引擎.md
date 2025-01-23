@@ -1,0 +1,102 @@
+---
+title: ES
+published: 2024-05-01
+updated: 2024-11-29
+description: 'Read more about Markdown features in Fuwari'
+image: ''
+tags: [Demo, ES, Markdown, Fuwari]
+category: 'Examples'
+draft: false 
+---
+
+
+倒排索引（Inverted Index）是一种高效的数据结构，主要用于全文搜索。它的核心思想是 **建立从词（Term）到文档（Document）的映射关系**，从而加速查询过程。  
+
+## 正向索引
+在传统的**正向索引**中，文档会被存储为 **文档ID → 词列表** 的形式，例如：  
+
+```plain
+1: 华为手机  
+2: 小米手机
+3: 苹果电脑
+```
+
+| id（主键） | title | price |
+| :---: | :---: | :---: |
+| 1 | 华为手机 | 6499 |
+| 2 | 小米手机 | 4399 |
+| 3 | 苹果电脑 | 12999 |
+
+
+如果要查找包含“手机”的所有信息，必须遍历所有文档并检查其中是否包含该词，效率较低，而且，如果title没有添加索引其效率更低。  
+
+![画板](https://cdn.nlark.com/yuque/0/2025/jpeg/43007687/1736910327536-cb66bceb-db02-4a09-b744-c94a6d8d2330.jpeg)
+
+## 倒排索引
+<font style="color:rgb(64, 64, 64);">倒序索引（Reverse Index）是一种特殊的索引结构，通常用于优化某些特定的查询操作。它的核心思想是将数据的顺序反转存储，从而在某些场景下提高查询效率。倒序索引广泛应用于数据库、搜索引擎、字符串处理等领域。</font>
+
++ **文档（Document）**：<font style="color:rgb(0, 0, 0);">文档是搜索引擎或数据库中的</font>**<font style="color:rgb(0, 0, 0);">基本存储单元</font>**<font style="color:rgb(0, 0, 0);">，它通常是一个结构化的数据对象。</font>
+
+:::tips
+<font style="color:rgb(0, 0, 0);">一个网页（搜索引擎）</font>
+
+<font style="color:rgb(0, 0, 0);">一篇文章（文档检索）</font>
+
+<font style="color:rgb(0, 0, 0);">一条日志记录（日志分析）</font>
+
+<font style="color:rgb(0, 0, 0);">一条数据库记录（数据库搜索）</font>
+
+:::
+
+<font style="color:rgb(0, 0, 0);">在 Elasticsearch 中，文档通常以 </font>**<font style="color:rgb(0, 0, 0);">JSON 格式</font>**<font style="color:rgb(0, 0, 0);">存储，例如：</font>
+
+```json
+{
+  "id": 1,
+  "title": "今天天气很好",
+  "content": "今天阳光明媚，适合出去散步"
+}
+```
+
+<font style="color:rgb(0, 0, 0);">每个文档都有一个唯一的 </font>**<font style="color:rgb(0, 0, 0);">文档 ID</font>**<font style="color:rgb(0, 0, 0);">，用于在倒排索引中</font>**<font style="color:rgb(0, 0, 0);">建立映射关系</font>**<font style="color:rgb(0, 0, 0);">。</font>
+
++ **词条（Term）**：<font style="color:rgb(0, 0, 0);">词条是索引中的</font>**<font style="color:rgb(0, 0, 0);">最小单位</font>**<font style="color:rgb(0, 0, 0);">，通常指的是经过</font>**<font style="color:rgb(0, 0, 0);">分词处理</font>**<font style="color:rgb(0, 0, 0);">后的关键词。例如，在搜索引擎中，用户查询“天气很好”，分词后可能得到两个词条：“天气”和“很好”。</font>
+
+:::tips
+输入文本："天气很好，适合散步"
+
+分词结果：[天气, 很好, 适合, 散步]
+
+倒排索引词条：天气、很好、适合、散步
+
+:::
+
+## <font style="color:rgb(0, 0, 0);">倒排索引中的映射关系</font>
+<font style="color:rgb(0, 0, 0);">倒排索引的核心作用是建立</font>**<font style="color:rgb(0, 0, 0);">词条 → 文档</font>**<font style="color:rgb(0, 0, 0);">的映射。</font>
+
+**<font style="color:rgb(0, 0, 0);">原始文档</font>**
+
+```css
+文档1：今天 天气 很好 适合 散步  
+文档2：今天 适合 读书  
+文档3：天气 炎热 适合 游泳  
+```
+
+**<font style="color:rgb(0, 0, 0);">倒排索引（简化表示）</font>**
+
+```css
+今天    → [文档1, 文档2]  
+天气    → [文档1, 文档3]  
+适合    → [文档1, 文档2, 文档3]  
+很好    → [文档1]  
+散步    → [文档1]  
+读书    → [文档2]  
+炎热    → [文档3]  
+游泳    → [文档3]  
+```
+
++ <font style="color:rgb(0, 0, 0);">如果查询“天气”，系统直接返回 [文档1, 文档3]，而不需要遍历所有文档。</font>
++ <font style="color:rgb(0, 0, 0);">查询“适合”时，会返回 [文档1, 文档2, 文档3]。</font>
+
+这样，当搜索“适合”时，只需查找索引表，即可快速找到相关文档，避免逐一扫描所有文档，提高查询效率。  
+

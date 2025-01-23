@@ -4,11 +4,7 @@
 ---
 ![GitHub Contributions Calendar](https://ghchart.rshah.org/green/camelliaxiaohua)
 
----
-
 ![Ashutosh's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username=camelliaxiaohua)
-
----
 
 [![trophy](https://github-profile-trophy.vercel.app/?username=camelliaxiaohua&theme=onedark)](https://github.com/ryo-ma/github-profile-trophy)
 
