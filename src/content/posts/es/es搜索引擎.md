@@ -5,7 +5,7 @@ updated: 2025-15-14
 description: '倒排索引（Inverted Index）是一种高效的数据结构，主要用于全文搜索。它的核心思想是建立从词（Term）到文档（Document）的映射关系，从而加速查询过程。'
 image: ''
 tags: [分布式搜索引擎, ESElasticsearch]
-category: 'Examples'
+category: '分布式搜索引擎'
 draft: false 
 ---
 
@@ -30,7 +30,7 @@ draft: false
 
 如果要查找包含“手机”的所有信息，必须遍历所有文档并检查其中是否包含该词，效率较低，而且，如果title没有添加索引其效率更低。  
 
-![画板](https://cdn.nlark.com/yuque/0/2025/jpeg/43007687/1736910327536-cb66bceb-db02-4a09-b744-c94a6d8d2330.jpeg)
+![画板](https://camelliaxiaohua-1313958787.cos.ap-shanghai.myqcloud.com/article/1736910327536-cb66bceb-db02-4a09-b744-c94a6d8d2330-20250123143038920-20250123143157148.jpeg)
 
 ## 倒排索引
 <font style="color:rgb(64, 64, 64);">倒序索引（Reverse Index）是一种特殊的索引结构，通常用于优化某些特定的查询操作。它的核心思想是将数据的顺序反转存储，从而在某些场景下提高查询效率。倒序索引广泛应用于数据库、搜索引擎、字符串处理等领域。</font>
