@@ -1,3 +1,13 @@
+---
+title: Redis实战篇
+category: Redis
+tags:
+  - Redis
+published: 2023-06-07
+updated: 2023-06-25
+draft: true
+---
+
 # Redis实战场景
 
 * **短信登录**：使用redis共享session来实现
